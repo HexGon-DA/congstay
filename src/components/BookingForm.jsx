@@ -147,7 +147,7 @@ export default function BookingForm({ initialRoom, initialLocation, appliedCode 
           <div className="flex flex-col sm:flex-row items-center justify-between pb-6 mb-8 border-b-2 border-[#2B3D2E] gap-4">
             <div className="flex items-center gap-3">
               <div className="w-12 h-12 rounded bg-[#2B3D2E] flex items-center justify-center p-1 border border-[#DCAE42]">
-                <img src="/cong-stay-logo.svg" alt="Logo" className="w-9 h-9" />
+                <img src={`${import.meta.env.BASE_URL}cong-stay-logo.svg`} alt="Logo" className="w-9 h-9" />
               </div>
               <div>
                 <h3 className="font-heading font-black text-lg text-[#2B3D2E] tracking-wider uppercase">

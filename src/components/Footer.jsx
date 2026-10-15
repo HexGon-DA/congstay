@@ -40,7 +40,7 @@ export default function Footer() {
           <div>
             <div className="flex items-center gap-3 mb-5">
               <div className="w-10 h-10 rounded-full bg-[#DCAE42] p-0.5 flex items-center justify-center border border-[#F4EEDD]/20">
-                <img src="/cong-stay-logo.svg" alt="Cộng Stay" className="w-9 h-9 rounded-full" />
+                <img src={`${import.meta.env.BASE_URL}cong-stay-logo.svg`} alt="Cộng Stay" className="w-9 h-9 rounded-full" />
               </div>
               <div>
                 <h3 className="font-heading font-black text-lg text-[#F4EEDD] tracking-wider uppercase leading-none">

@@ -94,15 +94,12 @@ export default function Hero({ onBookClick, onRoomsClick, onSelectLocation }) {
                 <div className="relative overflow-hidden rounded border-2 border-[#2B3D2E] aspect-[4/3] sm:aspect-[16/11]">
                   <img
                     src="./images/hero/hero-cong-stay.jpg"
-                    onError={(e) => {
-                      e.currentTarget.src = "https://upload.wikimedia.org/wikipedia/commons/7/79/Maison_longue_traditionnelle_%282%29.jpg";
-                    }}
                     alt="Cửa sổ gỗ cổ kính nhìn ra phố cổ Hà Nội và cà phê cốt dừa"
                     className="w-full h-full object-cover filter contrast-[1.05] brightness-95"
                     loading="eager"
                   />
                   {/* Subtle warm vintage film overlay */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#2B3D2E]/80 via-transparent to-[#DCAE42]/20 mix-blend-multiply pointer-events-none"></div>
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#2B3D2E]/45 via-transparent to-transparent pointer-events-none"></div>
 
                   {/* Coconut Coffee Badge on Image */}
                   <div className="absolute top-3 left-3 bg-[#F4EEDD]/95 backdrop-blur-sm px-3 py-1.5 rounded border border-[#2B3D2E] shadow flex items-center gap-2">

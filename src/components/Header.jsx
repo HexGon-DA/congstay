@@ -65,7 +65,7 @@ export default function Header({ onBookNowClick }) {
             >
               <div className="w-11 h-11 rounded-full p-0.5 bg-[#DCAE42] border border-[#2B3D2E] shadow-sm flex items-center justify-center transition-transform group-hover:scale-105">
                 <img
-                  src="/cong-stay-logo.svg"
+                  src={`${import.meta.env.BASE_URL}cong-stay-logo.svg`}
                   alt="Cộng Stay Logo"
                   className="w-10 h-10 object-contain rounded-full"
                 />
