@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" fill="none">
+  <!-- Outer decorative double circle -->
+  <circle cx="120" cy="120" r="112" stroke="#2B3D2E" stroke-width="4" stroke-dasharray="8 4" opacity="0.6"/>
+  <circle cx="120" cy="120" r="102" fill="#2B3D2E" stroke="#DCAE42" stroke-width="3"/>
+  <circle cx="120" cy="120" r="95" stroke="#DCAE42" stroke-width="1.5" stroke-dasharray="4 3"/>
+
+  <!-- Vintage Circular Arch / Window Frame -->
+  <g id="window-frame">
+    <!-- Window Outer Wooden Arch -->
+    <path d="M 65 145 L 65 95 A 55 55 0 0 1 175 95 L 175 145 Z" fill="#1E2B20" stroke="#DCAE42" stroke-width="3.5"/>
+    
+    <!-- Window Sill Wooden Plank -->
+    <rect x="58" y="143" width="124" height="10" rx="3" fill="#DCAE42" stroke="#2B3D2E" stroke-width="1.5"/>
+    
+    <!-- Window Internal Divider (Wood mullions) -->
+    <line x1="120" y1="42" x2="120" y2="143" stroke="#DCAE42" stroke-width="3"/>
+    <line x1="66" y1="95" x2="174" y2="95" stroke="#DCAE42" stroke-width="2.5"/>
+    
+    <!-- Louver blinds / retro wooden slats in lower panes -->
+    <line x1="72" y1="110" x2="114" y2="110" stroke="#DCAE42" stroke-width="1.5" opacity="0.7"/>
+    <line x1="72" y1="125" x2="114" y2="125" stroke="#DCAE42" stroke-width="1.5" opacity="0.7"/>
+    <line x1="126" y1="110" x2="168" y2="110" stroke="#DCAE42" stroke-width="1.5" opacity="0.7"/>
+    <line x1="126" y1="125" x2="168" y2="125" stroke="#DCAE42" stroke-width="1.5" opacity="0.7"/>
+  </g>
+
+  <!-- Golden 5-pointed Star inside circular glow -->
+  <g id="golden-star" transform="translate(120, 78)">
+    <circle cx="0" cy="0" r="26" fill="#A8322D" stroke="#DCAE42" stroke-width="2" />
+    <!-- 5-pointed Star: Outer R=20, Inner R=8.5 -->
+    <polygon points="
+      0,-20 
+      5.8,-6.2 
+      19,-6.2 
+      8.3,2.4 
+      12.4,16.2 
+      0,8 
+      -12.4,16.2 
+      -8.3,2.4 
+      -19,-6.2 
+      -5.8,-6.2" 
+      fill="#F5C242" stroke="#DCAE42" stroke-width="1.2" stroke-linejoin="round"/>
+    <!-- Star core facet lines -->
+    <path d="M 0,-20 L 0,8 M 19,-6.2 L -12.4,16.2 M -19,-6.2 L 12.4,16.2" stroke="#E5A625" stroke-width="0.8" opacity="0.7"/>
+  </g>
+
+  <!-- Vintage Stamp Typography Top & Bottom Arch or Banner -->
+  <path id="curve-bottom" d="M 50 175 Q 120 205 190 175" fill="transparent"/>
+  <text fill="#F4EEDD" font-family="'Courier Prime', 'Courier New', monospace" font-size="12" font-weight="bold" letter-spacing="3" text-anchor="middle">
+    <textPath href="#curve-bottom" startOffset="50%">
+      TRẠM DỪNG THỜI GIAN
+    </textPath>
+  </text>
+  
+  <text x="120" y="174" fill="#DCAE42" font-family="'Be Vietnam Pro', 'Montserrat', sans-serif" font-size="16" font-weight="900" letter-spacing="4" text-anchor="middle">
+    CỘNG STAY
+  </text>
+  <text x="120" y="194" fill="#F4EEDD" font-family="'Courier Prime', monospace" font-size="9" font-weight="bold" letter-spacing="2" opacity="0.8" text-anchor="middle">
+    ★ 1976 ★
+  </text>
+</svg>

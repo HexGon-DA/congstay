@@ -1,0 +1,198 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --bg-main: #F4EEDD;
+    --green-army: #2B3D2E;
+    --green-deep: #1E2B20;
+    --yellow-wall: #DCAE42;
+    --red-stamp: #A8322D;
+    --paper-card: #FBF9F3;
+    --paper-tint: #EAE2CF;
+  }
+
+  body {
+    background-color: var(--bg-main);
+    color: var(--green-army);
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Be Vietnam Pro', 'Montserrat', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: -0.02em;
+  }
+
+  ::selection {
+    background-color: #A8322D;
+    color: #F4EEDD;
+  }
+}
+
+/* Custom Typography & Utility styles */
+.font-typewriter {
+  font-family: 'Courier Prime', 'Courier New', monospace;
+}
+
+.font-heading {
+  font-family: 'Be Vietnam Pro', 'Montserrat', sans-serif;
+}
+
+.font-body {
+  font-family: 'Inter', 'Roboto', sans-serif;
+}
+
+/* Retro Stamp & Paper Styles */
+.bg-newsprint {
+  background-color: #F4EEDD;
+}
+
+.bg-army {
+  background-color: #2B3D2E;
+}
+
+.bg-vintage-yellow {
+  background-color: #DCAE42;
+}
+
+.bg-stamp-red {
+  background-color: #A8322D;
+}
+
+.border-army {
+  border-color: #2B3D2E;
+}
+
+.border-vintage-yellow {
+  border-color: #DCAE42;
+}
+
+.border-stamp-red {
+  border-color: #A8322D;
+}
+
+.text-army {
+  color: #2B3D2E;
+}
+
+.text-vintage-yellow {
+  color: #DCAE42;
+}
+
+.text-stamp-red {
+  color: #A8322D;
+}
+
+/* Paper textured card */
+.paper-card {
+  background-color: #FBF9F2;
+  border: 2px solid #2B3D2E;
+  box-shadow: 4px 4px 0px #2B3D2E;
+  transition: all 0.2s ease-in-out;
+}
+
+.paper-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 6px 6px 0px #2B3D2E;
+}
+
+/* Vintage Yellow Card */
+.yellow-card {
+  background-color: #DCAE42;
+  color: #1E2B20;
+  border: 2px solid #2B3D2E;
+  box-shadow: 4px 4px 0px #2B3D2E;
+}
+
+/* Retro CTA Button */
+.btn-stamp-red {
+  background-color: #A8322D;
+  color: #F4EEDD;
+  border: 2px solid #2B3D2E;
+  box-shadow: 3px 3px 0px #2B3D2E;
+  font-family: 'Be Vietnam Pro', 'Montserrat', sans-serif;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  transition: all 0.15s ease;
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-stamp-red:hover {
+  background-color: #932924;
+  transform: translate(-1px, -1px);
+  box-shadow: 5px 5px 0px #2B3D2E;
+}
+
+.btn-stamp-red:active {
+  transform: translate(2px, 2px);
+  box-shadow: 1px 1px 0px #2B3D2E;
+}
+
+/* Retro Green Outline Button */
+.btn-army-outline {
+  background-color: transparent;
+  color: #2B3D2E;
+  border: 2px solid #2B3D2E;
+  box-shadow: 3px 3px 0px #2B3D2E;
+  font-family: 'Be Vietnam Pro', 'Montserrat', sans-serif;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  transition: all 0.15s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-army-outline:hover {
+  background-color: #2B3D2E;
+  color: #F4EEDD;
+  transform: translate(-1px, -1px);
+  box-shadow: 5px 5px 0px #DCAE42;
+}
+
+.btn-army-outline:active {
+  transform: translate(2px, 2px);
+  box-shadow: 1px 1px 0px #2B3D2E;
+}
+
+/* Vintage Postal Stamp Serrated Border Effect */
+.stamp-edge {
+  position: relative;
+  background: #FBF9F2;
+  border: 3px dashed #A8322D;
+}
+
+/* Circular Seal Stamp (Dấu Mộc Tròn) */
+.seal-stamp {
+  border: 2px dashed #A8322D;
+  color: #A8322D;
+  border-radius: 9999px;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-transform: uppercase;
+  transform: rotate(-6deg);
+  opacity: 0.88;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #F4EEDD;
+}
+::-webkit-scrollbar-thumb {
+  background: #2B3D2E;
+  border: 2px solid #F4EEDD;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #A8322D;
+}
