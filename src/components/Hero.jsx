@@ -93,8 +93,11 @@ export default function Hero({ onBookClick, onRoomsClick, onSelectLocation }) {
                 {/* Main image: Retro bedroom, wooden window looking out to Hanoi Old Quarter, tray with coconut coffee */}
                 <div className="relative overflow-hidden rounded border-2 border-[#2B3D2E] aspect-[4/3] sm:aspect-[16/11]">
                   <img
-                    src="https://images.unsplash.com/photo-1590490360182-c33d57733427?auto=format&fit=crop&w=1200&q=80"
-                    alt="Phòng ngủ Cộng Stay với cửa sổ gỗ nhìn ra phố cổ và cà phê cốt dừa"
+                    src="./images/hero/hero-cong-stay.jpg"
+                    onError={(e) => {
+                      e.currentTarget.src = "https://upload.wikimedia.org/wikipedia/commons/7/79/Maison_longue_traditionnelle_%282%29.jpg";
+                    }}
+                    alt="Cửa sổ gỗ cổ kính nhìn ra phố cổ Hà Nội và cà phê cốt dừa"
                     className="w-full h-full object-cover filter contrast-[1.05] brightness-95"
                     loading="eager"
                   />

@@ -7,8 +7,8 @@ export const ROOMS_DATA = [
     name: 'Phòng Cửa Ô',
     subname: 'Standard Heritage Room',
     badge: 'MỘC MẠC & ẤM CÚNG',
-    image: 'https://images.unsplash.com/photo-1591088398332-8a7791972843?auto=format&fit=crop&w=800&q=80',
-    imageAlt: 'Phòng Cửa Ô 1 giường đôi đèn vàng ấm bàn ghế gỗ nan',
+    image: './images/rooms/phong-cua-o.jpg',
+    imageAlt: 'Phòng Cửa Ô 1 giường đôi đèn vàng ấm bàn ghế gỗ nan thời xưa Việt Nam',
     description: 'Diện tích 20m², hướng phố cổ, bình tráng men và trà thảo mộc chào đón.',
     specs: {
       area: '20m²',
@@ -32,8 +32,8 @@ export const ROOMS_DATA = [
     name: 'Phòng Mậu Dịch',
     subname: 'Deluxe Retro Suite',
     badge: 'LỰA CHỌN PHỔ BIẾN NHẤT',
-    image: 'https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=800&q=80',
-    imageAlt: 'Phòng Mậu Dịch ban công ngói âm dương góc pha cà phê phin riêng',
+    image: './images/rooms/phong-mau-dich.jpg',
+    imageAlt: 'Phòng Mậu Dịch ban công ngói âm dương góc pha cà phê phin riêng phố cổ',
     description: 'Diện tích 30m², ban công thoáng, miễn phí 2 ly Cà phê Cốt dừa mỗi sáng.',
     specs: {
       area: '30m²',
@@ -57,8 +57,8 @@ export const ROOMS_DATA = [
     name: 'Phòng Trạm Dừng',
     subname: 'Family Loft',
     badge: 'GIA ĐÌNH & NHÓM BẠN',
-    image: 'https://images.unsplash.com/photo-1566665797739-1674de7a421a?auto=format&fit=crop&w=800&q=80',
-    imageAlt: 'Phòng Trạm Dừng gia đình gác lửng kệ sách cũ và trò chơi dân gian',
+    image: './images/rooms/phong-tram-dung.jpg',
+    imageAlt: 'Phòng Trạm Dừng gian phòng gia đình nhà cổ sập gụ tranh dân gian Hàng Trống',
     description: 'Dành cho nhóm 4 người, không gian sinh hoạt chung ấm cúng.',
     specs: {
       area: '45m² (Gác lửng)',
