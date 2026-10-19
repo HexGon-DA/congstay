@@ -40,7 +40,7 @@ export default function Footer() {
           <div>
             <div className="flex items-center gap-3 mb-5">
               <div className="w-12 h-12 rounded-lg bg-[#E8DEC9] p-0.5 flex items-center justify-center border-2 border-[#DCAE42] overflow-hidden">
-                <img src={`${import.meta.env.BASE_URL}cong-stay-logo.png`} alt="Cộng Stay" className="w-full h-full object-contain" />
+                <img src={`${import.meta.env.BASE_URL}cong-time-capsule-heritage-stay.png`} alt="CỘNG — Time Capsule Heritage Stay" className="w-full h-full object-contain" />
               </div>
               <div>
                 <h3 className="font-heading font-black text-lg text-[#F4EEDD] tracking-wider uppercase leading-none">

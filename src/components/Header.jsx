@@ -65,8 +65,8 @@ export default function Header({ onBookNowClick }) {
             >
               <div className="w-12 h-12 rounded-lg p-0.5 bg-[#E8DEC9] border-2 border-[#DCAE42] shadow-sm flex items-center justify-center transition-transform group-hover:scale-105 overflow-hidden">
                 <img
-                  src={`${import.meta.env.BASE_URL}cong-stay-logo.png`}
-                  alt="Cộng Stay Logo"
+                  src={`${import.meta.env.BASE_URL}cong-time-capsule-heritage-stay.png`}
+                  alt="CỘNG — Time Capsule Heritage Stay"
                   className="w-full h-full object-contain"
                 />
               </div>

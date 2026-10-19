@@ -13,7 +13,7 @@
 - **Phông chữ:**
   - Tiêu đề (Headings): *Be Vietnam Pro Bold / Montserrat ExtraBold / Courier Prime*
   - Nội dung (Body text): *Inter / Roboto*
-- **Logo Cộng Stay:** Ngôi sao vàng viền tròn kết hợp khung cửa sổ gỗ retro trên nền xanh bộ đội (`/public/cong-stay-logo.svg`).
+- **Logo Cộng Stay:** Nhận diện `CỘNG — TIME CAPSULE HERITAGE STAY` với chữ xanh, hai dải đỏ trên nền giấy ngà (`/public/cong-time-capsule-heritage-stay.png`).
 
 ---
 
@@ -44,12 +44,12 @@
 
 4. **Khối 4: Danh mục phòng nghỉ (Hạng phòng & Giá niêm yết)**
    - 3 Thẻ phòng chuẩn:
-     1. **Phòng Cửa Ô (Standard Heritage Room)** — Giá: **950.000 VNĐ / đêm**  
-        (20m², hướng phố cổ, bình tráng men và trà thảo mộc chào đón).
-     2. **Phòng Mậu Dịch (Deluxe Retro Suite)** — Giá: **1.450.000 VNĐ / đêm**  
-        (30m², ban công ngói âm dương, miễn phí 2 ly Cà phê Cốt dừa mỗi sáng).
-     3. **Phòng Trạm Dừng (Family Loft)** — Giá: **1.850.000 VNĐ / đêm**  
-        (Gác lửng cho 4 người, kệ sách cũ và trò chơi dân gian).
+     1. **Phòng Cửa Ô (Standard Heritage Room)** — **750.000 VNĐ / đêm** ngày thường; **950.000 VNĐ / đêm** cuối tuần/lễ.  
+        20m², tối đa 2 người lớn, cửa chớp gỗ nhìn ngõ phố cổ; tặng trà sen/thảo mộc và bánh đậu xanh.
+     2. **Phòng Mậu Dịch (Deluxe Retro Suite)** — **1.300.000 VNĐ / đêm** ngày thường; **1.600.000 VNĐ / đêm** cuối tuần/lễ.  
+        30m², giường bốn cọc King-size và ban công mái ngói; phục vụ 02 ly cà phê cốt dừa mỗi sáng.
+     3. **Phòng Trạm Dừng (Family Loft)** — **1.750.000 VNĐ / đêm** ngày thường; **2.150.000 VNĐ / đêm** cuối tuần/lễ.  
+        Duplex 45m² cho 4–5 khách, gác lửng, tủ sách và trò chơi dân gian; voucher Tem Phiếu Mậu Dịch giảm 15%.
    - Nút **[Chọn phòng]** tự động điền hạng phòng vào Form Đặt Phòng và cuộn trang mượt mà.
 
 5. **Dịch vụ & Tiện ích & Ưu đãi:**
