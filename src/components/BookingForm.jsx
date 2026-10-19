@@ -61,14 +61,37 @@ export default function BookingForm({ initialRoom, initialLocation, appliedCode 
 
   const nights = calculateNights();
 
-  // Price estimate
-  const getRoomPrice = () => {
-    if (roomType.includes('Cửa Ô')) return 950000;
-    if (roomType.includes('Trạm Dừng')) return 1850000;
-    return 1450000; // Phòng Mậu Dịch default
+  // Calculate price per night based on day of week (Weekday: Sun-Thu, Weekend: Fri-Sat)
+  const getRoomPriceForDate = (dateObj) => {
+    const day = dateObj.getDay();
+    const isWeekend = day === 5 || day === 6; // Friday or Saturday night
+
+    if (roomType.includes('Cửa Ô')) {
+      return isWeekend ? 950000 : 750000;
+    }
+    if (roomType.includes('Trạm Dừng')) {
+      return isWeekend ? 2150000 : 1750000;
+    }
+    // Phòng Mậu Dịch default
+    return isWeekend ? 1600000 : 1300000;
   };
 
-  const rawTotal = getRoomPrice() * nights;
+  const calculateTotal = () => {
+    if (!checkIn || !checkOut) return 0;
+    let total = 0;
+    let curr = new Date(checkIn);
+    const end = new Date(checkOut);
+    if (end <= curr) {
+      return getRoomPriceForDate(curr);
+    }
+    while (curr < end) {
+      total += getRoomPriceForDate(curr);
+      curr.setDate(curr.getDate() + 1);
+    }
+    return total;
+  };
+
+  const rawTotal = calculateTotal();
   const isDiscountValid = discountCode.trim().toUpperCase() === 'CONGSTAY10';
   const discountAmount = isDiscountValid ? rawTotal * 0.1 : 0;
   const finalTotal = rawTotal - discountAmount;
@@ -146,15 +169,15 @@ export default function BookingForm({ initialRoom, initialLocation, appliedCode 
           {/* Top Form Banner */}
           <div className="flex flex-col sm:flex-row items-center justify-between pb-6 mb-8 border-b-2 border-[#2B3D2E] gap-4">
             <div className="flex items-center gap-3">
-              <div className="w-12 h-12 rounded bg-[#2B3D2E] flex items-center justify-center p-1 border border-[#DCAE42]">
-                <img src={`${import.meta.env.BASE_URL}cong-stay-logo.svg`} alt="Logo" className="w-9 h-9" />
+              <div className="w-12 h-12 rounded-lg bg-[#E8DEC9] flex items-center justify-center p-0.5 border-2 border-[#DCAE42] overflow-hidden">
+                <img src={`${import.meta.env.BASE_URL}cong-stay-logo.png`} alt="Logo" className="w-full h-full object-contain" />
               </div>
               <div>
                 <h3 className="font-heading font-black text-lg text-[#2B3D2E] tracking-wider uppercase">
                   CỘNG STAY • TRẠM DỪNG THỜI GIAN
                 </h3>
                 <span className="font-typewriter text-xs text-[#A8322D] font-bold">
-                  SỔ CUNG ỨNG LƯU TRÚ QUỐC GIA 1976
+                  TIME CAPSULE HERITAGE STAY • SỔ CUNG ỨNG 1976
                 </span>
               </div>
             </div>
@@ -271,13 +294,13 @@ export default function BookingForm({ initialRoom, initialLocation, appliedCode 
                   className="w-full bg-[#F4EEDD] border-2 border-[#2B3D2E] rounded px-4 py-3 font-medium text-[#2B3D2E] focus:outline-none focus:ring-2 focus:ring-[#DCAE42] text-sm sm:text-base cursor-pointer"
                 >
                   <option value="Phòng Cửa Ô (Standard Heritage Room)">
-                    Phòng Cửa Ô — 950.000 VNĐ / đêm
+                    Phòng Cửa Ô — Từ 750.000 VNĐ / đêm (Standard Heritage)
                   </option>
                   <option value="Phòng Mậu Dịch (Deluxe Retro Suite)">
-                    Phòng Mậu Dịch — 1.450.000 VNĐ / đêm (Có ban công)
+                    Phòng Mậu Dịch — Từ 1.300.000 VNĐ / đêm (Deluxe Retro Suite - Ban công)
                   </option>
                   <option value="Phòng Trạm Dừng (Family Loft)">
-                    Phòng Trạm Dừng — 1.850.000 VNĐ / đêm (Gác lửng)
+                    Phòng Trạm Dừng — Từ 1.750.000 VNĐ / đêm (Family Loft - Duplex)
                   </option>
                 </select>
               </div>

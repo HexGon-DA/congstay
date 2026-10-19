@@ -39,14 +39,14 @@ export default function Footer() {
           {/* Cột 1: Thông tin liên hệ */}
           <div>
             <div className="flex items-center gap-3 mb-5">
-              <div className="w-10 h-10 rounded-full bg-[#DCAE42] p-0.5 flex items-center justify-center border border-[#F4EEDD]/20">
-                <img src={`${import.meta.env.BASE_URL}cong-stay-logo.svg`} alt="Cộng Stay" className="w-9 h-9 rounded-full" />
+              <div className="w-12 h-12 rounded-lg bg-[#E8DEC9] p-0.5 flex items-center justify-center border-2 border-[#DCAE42] overflow-hidden">
+                <img src={`${import.meta.env.BASE_URL}cong-stay-logo.png`} alt="Cộng Stay" className="w-full h-full object-contain" />
               </div>
               <div>
                 <h3 className="font-heading font-black text-lg text-[#F4EEDD] tracking-wider uppercase leading-none">
                   CỘNG STAY
                 </h3>
-                <span className="font-typewriter text-xs text-[#DCAE42]">Trạm Dừng Thời Gian</span>
+                <span className="font-typewriter text-xs text-[#DCAE42] uppercase tracking-wider">Time Capsule Heritage Stay</span>
               </div>
             </div>
 

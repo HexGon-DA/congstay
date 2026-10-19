@@ -63,11 +63,11 @@ export default function Header({ onBookNowClick }) {
               onClick={(e) => handleNavClick(e, '#hero')}
               className="flex items-center gap-3 group focus:outline-none"
             >
-              <div className="w-11 h-11 rounded-full p-0.5 bg-[#DCAE42] border border-[#2B3D2E] shadow-sm flex items-center justify-center transition-transform group-hover:scale-105">
+              <div className="w-12 h-12 rounded-lg p-0.5 bg-[#E8DEC9] border-2 border-[#DCAE42] shadow-sm flex items-center justify-center transition-transform group-hover:scale-105 overflow-hidden">
                 <img
-                  src={`${import.meta.env.BASE_URL}cong-stay-logo.svg`}
+                  src={`${import.meta.env.BASE_URL}cong-stay-logo.png`}
                   alt="Cộng Stay Logo"
-                  className="w-10 h-10 object-contain rounded-full"
+                  className="w-full h-full object-contain"
                 />
               </div>
               <div className="flex flex-col">
@@ -77,8 +77,8 @@ export default function Header({ onBookNowClick }) {
                   </span>
                   <span className="inline-block w-2 h-2 rounded-full bg-[#DCAE42]"></span>
                 </div>
-                <span className="font-typewriter text-[10px] sm:text-xs text-[#DCAE42] tracking-widest uppercase">
-                  Trạm Dừng Thời Gian
+                <span className="font-typewriter text-[9px] sm:text-[11px] text-[#DCAE42] tracking-wider sm:tracking-widest uppercase">
+                  TIME CAPSULE HERITAGE STAY
                 </span>
               </div>
             </a>

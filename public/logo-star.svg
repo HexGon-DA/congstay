@@ -1,22 +1,25 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" width="240" height="240" fill="none">
-  <!-- Nền tròn xanh bộ đội, viền vàng (nền ngoài trong suốt) -->
-  <circle cx="120" cy="120" r="114" fill="#2B3D2E" stroke="#DCAE42" stroke-width="6"/>
-  <circle cx="120" cy="120" r="102" stroke="#DCAE42" stroke-width="1.5" opacity="0.85"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="100%" height="100%" fill="none">
+  <!-- Kraft Paper Textured Background -->
+  <rect width="400" height="400" fill="#E8DEC9" rx="16"/>
+  
+  <!-- Subtle inner vintage border -->
+  <rect x="12" y="12" width="376" height="376" stroke="#2B3D2E" stroke-width="1.5" stroke-dasharray="6 4" fill="none" opacity="0.4" rx="12"/>
 
-  <!-- Ngôi sao vàng năm cánh -->
-  <polygon fill="#F5C242" stroke="#DCAE42" stroke-width="2" stroke-linejoin="round"
-    points="120,34 126.58,52.94 146.63,53.35 130.65,65.46 136.46,84.65 120,73.2 103.54,84.65 109.35,65.46 93.37,53.35 113.42,52.94"/>
+  <!-- Chữ CỘNG màu xanh bộ đội thương hiệu -->
+  <g id="cong-brand">
+    <text x="190" y="180" text-anchor="middle" fill="#2B4B28" font-family="'Be Vietnam Pro', 'Montserrat', Arial, sans-serif" font-weight="900" font-size="115" letter-spacing="-2">CỘNG</text>
+    <text x="345" y="120" fill="#2B4B28" font-family="'Be Vietnam Pro', sans-serif" font-weight="700" font-size="22">®</text>
+  </g>
 
-  <!-- Khung cửa sổ gỗ retro -->
-  <rect x="72" y="102" width="96" height="88" rx="4" fill="#1E2B20" stroke="#DCAE42" stroke-width="5"/>
-  <!-- Ô kính ánh đèn vàng ấm -->
-  <rect x="77" y="107" width="41" height="38" fill="#DCAE42" opacity="0.28"/>
-  <rect x="122" y="107" width="41" height="38" fill="#DCAE42" opacity="0.28"/>
-  <rect x="77" y="150" width="41" height="35" fill="#DCAE42" opacity="0.14"/>
-  <rect x="122" y="150" width="41" height="35" fill="#DCAE42" opacity="0.14"/>
-  <!-- Nan cửa gỗ -->
-  <line x1="120" y1="104" x2="120" y2="188" stroke="#DCAE42" stroke-width="4"/>
-  <line x1="74" y1="147" x2="166" y2="147" stroke="#DCAE42" stroke-width="4"/>
-  <!-- Bậu cửa -->
-  <rect x="68" y="190" width="104" height="9" rx="2" fill="#DCAE42"/>
+  <!-- Khối tem phiếu đỏ & dải viền đỏ đặc trưng -->
+  <g id="red-banner">
+    <rect x="75" y="200" width="250" height="34" fill="#A8322D" rx="2"/>
+    <rect x="75" y="240" width="250" height="5" fill="#A8322D" rx="1"/>
+  </g>
+
+  <!-- Dòng chữ TIME CAPSULE HERITAGE STAY -->
+  <g id="sub-branding" fill="#2B4B28" font-family="'Be Vietnam Pro', 'Montserrat', sans-serif" font-weight="800" text-anchor="middle">
+    <text x="200" y="290" font-size="26" letter-spacing="4.5">TIME CAPSULE</text>
+    <text x="200" y="325" font-size="24.5" letter-spacing="3.5">HERITAGE STAY</text>
+  </g>
 </svg>

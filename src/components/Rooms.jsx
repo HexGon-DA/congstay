@@ -1,88 +1,115 @@
-import React from 'react';
-import { Bed, Users, Maximize2, Coffee, Check, Star, ShieldCheck, Sparkles } from 'lucide-react';
+import React, { useState } from 'react';
+import { Bed, Users, Maximize2, Coffee, Check, Star, ShieldCheck, Sparkles, Clock, Calendar, Gift, Eye, RefreshCw, Shield } from 'lucide-react';
 
 export const ROOMS_DATA = [
   {
     id: 'cua-o',
     name: 'Phòng Cửa Ô',
     subname: 'Standard Heritage Room',
+    headline: 'Nét duyên mộc mạc giữa lòng phố cổ',
     badge: 'MỘC MẠC & ẤM CÚNG',
     image: './images/rooms/phong-cua-o.jpg',
     imageAlt: 'Phòng Cửa Ô 1 giường đôi đèn vàng ấm bàn ghế gỗ nan thời xưa Việt Nam',
-    description: 'Diện tích 20m², hướng phố cổ, bình tráng men và trà thảo mộc chào đón.',
     specs: {
       area: '20m²',
-      bed: '1 Giường đôi lớn (Queen)',
-      view: 'Hướng ngõ phố cổ',
-      guests: '2 Người lớn'
+      guests: 'Tối đa 2 người lớn (1 giường đôi)',
+      view: 'Hướng ngõ phố cổ yên bình, đón gió trời qua ô cửa chớp gỗ'
     },
     amenities: [
-      'Bình tráng men & Trà thảo mộc chào đón',
-      'Đèn bàn vàng ấm & Bàn ghế gỗ nan hoài cổ',
-      'Đệm cao cấp & Điều hòa êm 2 chiều',
-      'Phòng tắm tiện nghi với vòi sen áp lực'
+      'Miễn phí set trà sen / thảo mộc chào đón & bánh đậu xanh mậu dịch',
+      'Phích nước Rạng Đông, cốc tráng men hoài niệm',
+      'Đèn đọc sách ánh vàng ấm áp, đài cassette vintage',
+      'Phòng tắm khép kín với tinh dầu sả chanh thư giãn'
     ],
-    priceNumber: 950000,
-    priceFormatted: '950.000 VNĐ',
-    period: '/ đêm',
+    prices: {
+      weekday: 750000,
+      weekdayFormatted: '750.000 VNĐ',
+      weekend: 950000,
+      weekendFormatted: '950.000 VNĐ'
+    },
+    webPerks: [
+      'Miễn phí set trà sen chào đón & bánh đậu xanh mậu dịch',
+      'Tặng voucher giảm 10% đồ uống tại toàn hệ thống Cộng Cà Phê'
+    ],
     isPopular: false
   },
   {
     id: 'mau-dich',
     name: 'Phòng Mậu Dịch',
     subname: 'Deluxe Retro Suite',
+    headline: 'Không gian di sản sang trọng & Hương vị cà phê sớm mai',
     badge: 'LỰA CHỌN PHỔ BIẾN NHẤT',
     image: './images/rooms/phong-mau-dich.jpg',
-    imageAlt: 'Phòng Mậu Dịch ban công ngói âm dương góc pha cà phê phin riêng phố cổ',
-    description: 'Diện tích 30m², ban công thoáng, miễn phí 2 ly Cà phê Cốt dừa mỗi sáng.',
+    imageAlt: 'Phòng Mậu Dịch giường 4 cọc King-size ban công ngói âm dương cà phê phin cốt dừa',
     specs: {
       area: '30m²',
-      bed: '1 Giường King hoặc 2 Giường đơn',
-      view: 'Ban công ngói âm dương thoáng đãng',
-      guests: '2 - 3 Người lớn'
+      guests: 'Tối đa 2 – 3 người lớn (1 giường 4 cọc King-size)',
+      view: 'Ban công riêng hướng trực diện ra mái ngói âm dương rêu phong'
     },
     amenities: [
-      'Miễn phí 2 ly Cà phê Cốt dừa mỗi sáng',
-      'Góc pha cà phê phin thủ công riêng biệt',
-      'Ban công ngói âm dương nhìn phố phường',
-      'Máy hát đĩa vinyl & Quạt tai voi cổ'
+      'Đặc quyền: Tặng 02 ly Cà phê Cốt dừa trứ danh mỗi sáng phục vụ tận phòng',
+      'Quầy pha chế phin nhôm truyền thống & hạt cà phê rang mộc cao cấp',
+      'Máy hát đĩa than / cassette cổ điển cùng tuyển tập nhạc xưa êm dịu',
+      'Ban công ngắm trọn mái ngói phố cổ với bàn ghế thư giãn ngoài trời',
+      'Bồn tắm ngâm thảo dược truyền thống'
     ],
-    priceNumber: 1450000,
-    priceFormatted: '1.450.000 VNĐ',
-    period: '/ đêm',
+    prices: {
+      weekday: 1300000,
+      weekdayFormatted: '1.300.000 VNĐ',
+      weekend: 1600000,
+      weekendFormatted: '1.600.000 VNĐ'
+    },
+    webPerks: [
+      'Miễn phí 02 ly Cà phê Cốt dừa phục vụ mỗi sáng',
+      'Tặng set trà thảo mộc & trải nghiệm pha phin thủ công tại phòng'
+    ],
     isPopular: true
   },
   {
     id: 'tram-dung',
     name: 'Phòng Trạm Dừng',
     subname: 'Family Loft',
+    headline: 'Tổ ấm gác lửng cho gia đình & những cuộc hội ngộ thân tình',
     badge: 'GIA ĐÌNH & NHÓM BẠN',
     image: './images/rooms/phong-tram-dung.jpg',
-    imageAlt: 'Phòng Trạm Dừng gian phòng gia đình nhà cổ sập gụ tranh dân gian Hàng Trống',
-    description: 'Dành cho nhóm 4 người, không gian sinh hoạt chung ấm cúng.',
+    imageAlt: 'Phòng Trạm Dừng gia đình gác lửng duplex tủ sách trò chơi dân gian ô ăn quan',
     specs: {
-      area: '45m² (Gác lửng)',
-      bed: '2 Giường đôi lớn (Tầng & Lửng)',
-      view: 'Không gian mở mái ngói',
-      guests: '4 - 5 Người'
+      area: '45m² (Thiết kế Duplex có gác lửng)',
+      guests: '4 – 5 khách (Gia đình hoặc nhóm bạn thân)',
+      view: 'Cửa vòm kính lớn ôm trọn mảng xanh và phố phường nhộn nhịp'
     },
     amenities: [
-      'Kệ sách văn học cũ & Truyện tranh hoài niệm',
-      'Bộ sưu tập trò chơi dân gian (Ô ăn quan, cờ cá ngựa)',
-      'Không gian sinh hoạt chung rộng rãi',
-      'Tặng set trà cúc mật ong & Kẹo lạc Hà Nội'
+      'Bố cục 2 giường lớn (1 giường trệt master + 1 đệm gác lửng tiện nghi)',
+      'Khu vực phòng khách riêng với sofa cổ điển, bàn trà gỗ lớn',
+      'Tủ sách văn hóa - nghệ thuật xưa và bộ trò chơi dân gian tương tác (Ô ăn quan, cờ cá ngựa, cờ tướng)',
+      'Bộ ấm chén trà men sứ Bát Tràng và phích nước nóng phục vụ cả gia đình',
+      'Ưu đãi voucher Tem Phiếu Mậu Dịch giảm 15% tại toàn bộ hệ thống Cộng Cà Phê'
     ],
-    priceNumber: 1850000,
-    priceFormatted: '1.850.000 VNĐ',
-    period: '/ đêm',
+    prices: {
+      weekday: 1750000,
+      weekdayFormatted: '1.750.000 VNĐ',
+      weekend: 2150000,
+      weekendFormatted: '2.150.000 VNĐ'
+    },
+    webPerks: [
+      'Tặng voucher "Tem Phiếu Mậu Dịch" giảm 15% đồ uống tại Cộng Cà Phê',
+      'Miễn phí bộ trò chơi dân gian (Ô ăn quan, cờ vua...) tại phòng'
+    ],
     isPopular: false
   }
 ];
 
 export default function Rooms({ onSelectRoom }) {
+  const [dayType, setDayType] = useState('weekday'); // 'weekday' | 'weekend'
+
   const handleSelect = (room) => {
     if (onSelectRoom) {
-      onSelectRoom(room);
+      onSelectRoom({
+        ...room,
+        selectedDayType: dayType,
+        selectedPriceNumber: dayType === 'weekday' ? room.prices.weekday : room.prices.weekend,
+        selectedPriceFormatted: dayType === 'weekday' ? room.prices.weekdayFormatted : room.prices.weekendFormatted
+      });
     }
   };
 
@@ -90,11 +117,11 @@ export default function Rooms({ onSelectRoom }) {
     <section id="rooms" className="py-16 sm:py-24 bg-[#F4EEDD] relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Title Header */}
-        <div className="text-center max-w-3xl mx-auto mb-14">
+        <div className="text-center max-w-3xl mx-auto mb-10 sm:mb-12">
           <div className="inline-flex items-center gap-2 mb-3">
             <span className="w-8 h-[2px] bg-[#DCAE42]"></span>
             <span className="font-typewriter text-xs sm:text-sm font-bold uppercase tracking-widest text-[#A8322D]">
-              BẢNG NIÊM YẾT HẠNG PHÒNG
+              BẢNG NIÊM YẾT HẠNG PHÒNG DI SẢN
             </span>
             <span className="w-8 h-[2px] bg-[#DCAE42]"></span>
           </div>
@@ -103,106 +130,294 @@ export default function Rooms({ onSelectRoom }) {
             Danh Mục Gian Phòng Nghỉ
           </h2>
           <p className="font-body text-base sm:text-lg text-[#3A4A3C]">
-            Mỗi gian phòng là một nếp nhà xưa lưu giữ hồn cốt văn hóa, kết hợp cùng tiện nghi êm ái hiện đại.
+            Không gian lưu trú di sản sang trọng, kết hợp tinh tế giữa nếp sống xưa thời bao cấp và tiện nghi tiêu chuẩn cao cấp.
           </p>
+
+          {/* Day Type Toggle Switch */}
+          <div className="mt-8 inline-flex items-center p-1.5 bg-[#EAE2CF] border-2 border-[#2B3D2E] rounded-lg shadow-[3px_3px_0px_#2B3D2E]">
+            <button
+              onClick={() => setDayType('weekday')}
+              className={`px-4 sm:px-6 py-2 text-xs sm:text-sm font-heading font-bold rounded transition-all cursor-pointer ${
+                dayType === 'weekday'
+                  ? 'bg-[#2B3D2E] text-[#F4EEDD] shadow-sm'
+                  : 'text-[#2B3D2E] hover:text-[#A8322D]'
+              }`}
+            >
+              Ngày Thường (CN – Th5)
+            </button>
+            <button
+              onClick={() => setDayType('weekend')}
+              className={`px-4 sm:px-6 py-2 text-xs sm:text-sm font-heading font-bold rounded transition-all cursor-pointer ${
+                dayType === 'weekend'
+                  ? 'bg-[#A8322D] text-[#F4EEDD] shadow-sm'
+                  : 'text-[#2B3D2E] hover:text-[#A8322D]'
+              }`}
+            >
+              Cuối Tuần (Th6 – Th7 & Lễ)
+            </button>
+          </div>
         </div>
 
         {/* 3 Horizontal Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 items-stretch">
-          {ROOMS_DATA.map((room) => (
-            <div
-              key={room.id}
-              className={`paper-card rounded-lg flex flex-col justify-between overflow-hidden relative group ${
-                room.isPopular ? 'border-3 border-[#A8322D] ring-2 ring-[#DCAE42]/50' : 'border-2 border-[#2B3D2E]'
-              }`}
-            >
-              {/* Popular Badge if applicable */}
-              {room.isPopular && (
-                <div className="absolute top-0 right-0 z-20 bg-[#A8322D] text-[#F4EEDD] text-[11px] font-heading font-extrabold px-3 py-1 rounded-bl-lg shadow uppercase tracking-wider flex items-center gap-1">
-                  <Star className="w-3 h-3 fill-current text-[#DCAE42]" />
-                  <span>Yêu thích nhất</span>
-                </div>
-              )}
-
-              {/* Top part: Image & Titles */}
-              <div>
-                {/* Room Image */}
-                <div className="relative overflow-hidden aspect-[16/10] border-b-2 border-[#2B3D2E]">
-                  <img
-                    src={room.image}
-                    alt={room.imageAlt}
-                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                    loading="lazy"
-                  />
-                  <div className="absolute bottom-2 left-2 bg-[#2B3D2E]/90 text-[#F4EEDD] px-2.5 py-1 rounded text-xs font-typewriter">
-                    {room.specs.area} • {room.specs.guests}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 items-stretch mb-16">
+          {ROOMS_DATA.map((room) => {
+            const currentPrice = dayType === 'weekday' ? room.prices.weekdayFormatted : room.prices.weekendFormatted;
+            return (
+              <div
+                key={room.id}
+                className={`paper-card rounded-lg flex flex-col justify-between overflow-hidden relative group ${
+                  room.isPopular ? 'border-3 border-[#A8322D] ring-2 ring-[#DCAE42]/50' : 'border-2 border-[#2B3D2E]'
+                }`}
+              >
+                {/* Popular Badge if applicable */}
+                {room.isPopular && (
+                  <div className="absolute top-0 right-0 z-20 bg-[#A8322D] text-[#F4EEDD] text-[11px] font-heading font-extrabold px-3 py-1 rounded-bl-lg shadow uppercase tracking-wider flex items-center gap-1">
+                    <Star className="w-3 h-3 fill-current text-[#DCAE42]" />
+                    <span>Yêu thích nhất</span>
                   </div>
-                </div>
+                )}
 
-                {/* Content */}
-                <div className="p-5 sm:p-6">
-                  {/* Badge & Title */}
-                  <div className="mb-3">
-                    <span className="font-typewriter text-[11px] font-bold text-[#A8322D] uppercase tracking-wider block mb-1">
-                      {room.badge}
-                    </span>
-                    <h3 className="font-heading text-xl sm:text-2xl font-bold text-[#2B3D2E] uppercase">
-                      {room.name}
-                    </h3>
-                    <p className="font-typewriter text-xs text-[#2B3D2E]/70 italic mb-2">
-                      ({room.subname})
-                    </p>
+                {/* Top part: Image & Titles */}
+                <div>
+                  {/* Room Image */}
+                  <div className="relative overflow-hidden aspect-[16/11] border-b-2 border-[#2B3D2E] bg-[#2B3D2E]">
+                    <img
+                      src={room.image}
+                      alt={room.imageAlt}
+                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105 filter contrast-[1.03]"
+                      loading="lazy"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#2B3D2E]/70 via-transparent to-transparent pointer-events-none"></div>
+
+                    {/* Area tag on photo */}
+                    <div className="absolute bottom-2 left-2 bg-[#F4EEDD]/95 text-[#2B3D2E] border border-[#2B3D2E] px-2.5 py-1 rounded text-[11px] font-typewriter font-bold shadow-sm">
+                      {room.specs.area}
+                    </div>
                   </div>
 
-                  {/* Description as requested */}
-                  <p className="font-body text-sm sm:text-base text-[#2B3D2E] leading-relaxed mb-4 bg-[#F4EEDD] p-3 rounded border border-[#2B3D2E]/20">
-                    {room.description}
-                  </p>
+                  {/* Content */}
+                  <div className="p-5 sm:p-6">
+                    {/* Badge & Title */}
+                    <div className="mb-3">
+                      <span className="font-typewriter text-[11px] font-bold text-[#A8322D] uppercase tracking-wider block mb-1">
+                        {room.badge}
+                      </span>
+                      <h3 className="font-heading text-xl sm:text-2xl font-bold text-[#2B3D2E] uppercase leading-tight">
+                        {room.name}
+                      </h3>
+                      <p className="font-typewriter text-xs text-[#2B3D2E]/70 italic mb-1">
+                        ({room.subname})
+                      </p>
+                      <p className="font-heading text-xs font-semibold text-[#A8322D] mt-1 italic">
+                        "{room.headline}"
+                      </p>
+                    </div>
 
-                  {/* Highlights list */}
-                  <div className="space-y-1.5 mb-5 text-xs text-[#2B3D2E]">
-                    {room.amenities.map((item, idx) => (
-                      <div key={idx} className="flex items-start gap-2">
-                        <Check className="w-3.5 h-3.5 text-[#A8322D] mt-0.5 shrink-0" />
-                        <span className="leading-snug">{item}</span>
+                    {/* Specifications Box */}
+                    <div className="bg-[#F4EEDD] p-3 rounded border border-[#2B3D2E]/20 text-xs text-[#2B3D2E] mb-4 space-y-1.5">
+                      <div className="flex items-start gap-1.5">
+                        <Users className="w-3.5 h-3.5 text-[#A8322D] shrink-0 mt-0.5" />
+                        <span><strong>Sức chứa:</strong> {room.specs.guests}</span>
                       </div>
-                    ))}
+                      <div className="flex items-start gap-1.5">
+                        <Eye className="w-3.5 h-3.5 text-[#A8322D] shrink-0 mt-0.5" />
+                        <span><strong>Tầm nhìn:</strong> {room.specs.view}</span>
+                      </div>
+                    </div>
+
+                    {/* Highlights list */}
+                    <div className="mb-4">
+                      <span className="font-typewriter text-[10px] uppercase font-bold text-[#2B3D2E]/80 tracking-wider block mb-2">
+                        Tiện ích nổi bật:
+                      </span>
+                      <div className="space-y-1.5 text-xs text-[#2B3D2E]">
+                        {room.amenities.map((item, idx) => (
+                          <div key={idx} className="flex items-start gap-2">
+                            <Check className="w-3.5 h-3.5 text-[#A8322D] mt-0.5 shrink-0" />
+                            <span className="leading-snug">{item}</span>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+
+                    {/* Web Perks Box */}
+                    <div className="p-3 bg-[#DCAE42]/20 border border-dashed border-[#2B3D2E]/40 rounded mb-4">
+                      <span className="font-heading text-[11px] font-bold text-[#2B3D2E] flex items-center gap-1 mb-1.5">
+                        <Gift className="w-3.5 h-3.5 text-[#A8322D]" />
+                        Đặc quyền khi đặt qua Web:
+                      </span>
+                      <ul className="space-y-1 text-[11px] text-[#2B3D2E]">
+                        {room.webPerks.map((perk, pidx) => (
+                          <li key={pidx} className="flex items-start gap-1.5">
+                            <span className="text-[#A8322D] font-bold">•</span>
+                            <span>{perk}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
                   </div>
                 </div>
-              </div>
 
-              {/* Bottom part: Price & CTA Button */}
-              <div className="p-5 sm:p-6 pt-0 border-t border-dashed border-[#2B3D2E]/20 mt-auto">
-                <div className="flex items-baseline justify-between mb-4 mt-3">
-                  <span className="font-typewriter text-xs text-[#2B3D2E]/80 uppercase">
-                    Giá niêm yết:
-                  </span>
-                  <div className="text-right">
-                    <span className="font-heading font-black text-xl sm:text-2xl text-[#A8322D]">
-                      {room.priceFormatted}
-                    </span>
-                    <span className="font-typewriter text-xs text-[#2B3D2E] ml-1">
-                      {room.period}
-                    </span>
+                {/* Bottom part: Price & CTA Button */}
+                <div className="p-5 sm:p-6 pt-0 border-t border-dashed border-[#2B3D2E]/20 mt-auto">
+                  <div className="flex items-baseline justify-between mb-4 mt-3">
+                    <div>
+                      <span className="font-typewriter text-xs text-[#2B3D2E]/80 uppercase block">
+                        {dayType === 'weekday' ? 'Giá ngày thường:' : 'Giá cuối tuần/lễ:'}
+                      </span>
+                      <span className="text-[10px] font-mono text-[#2B3D2E]/60">
+                        {dayType === 'weekday' ? '(CN – Th5)' : '(Th6 – Th7 & Lễ Tết)'}
+                      </span>
+                    </div>
+                    <div className="text-right">
+                      <span className="font-heading font-black text-xl sm:text-2xl text-[#A8322D]">
+                        {currentPrice}
+                      </span>
+                      <span className="font-typewriter text-xs text-[#2B3D2E] ml-1">
+                        / đêm
+                      </span>
+                    </div>
                   </div>
-                </div>
 
-                <button
-                  onClick={() => handleSelect(room)}
-                  className="w-full btn-stamp-red py-3 text-sm rounded cursor-pointer"
-                >
-                  Chọn phòng này
-                </button>
+                  <button
+                    onClick={() => handleSelect(room)}
+                    className="w-full btn-stamp-red py-3 text-sm rounded cursor-pointer"
+                  >
+                    Chọn phòng này
+                  </button>
+                </div>
               </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
 
-        {/* Note on Heritage hospitality */}
-        <div className="mt-12 text-center">
-          <div className="inline-flex items-center gap-3 px-4 py-2 bg-[#DCAE42]/20 border border-[#2B3D2E]/30 rounded text-xs sm:text-sm text-[#2B3D2E]">
-            <Sparkles className="w-4 h-4 text-[#A8322D]" />
-            <span>Mọi hạng phòng đều bao gồm bữa sáng truyền thống và trà phin chào đón.</span>
+        {/* Bảng Niêm Yết Giá & Đặc Quyền Chi Tiết (Comparison Table) */}
+        <div className="mb-14">
+          <div className="text-center mb-6">
+            <span className="font-typewriter text-xs uppercase font-bold text-[#A8322D] tracking-widest block mb-1">
+              BẢNG TỔNG HỢP CHI TIẾT
+            </span>
+            <h3 className="font-heading font-bold text-2xl text-[#2B3D2E] uppercase">
+              Bảng So Sánh Giá & Đặc Quyền Đặt Trực Tiếp
+            </h3>
+          </div>
+
+          <div className="overflow-x-auto bg-[#FBF9F2] border-2 border-[#2B3D2E] shadow-[5px_5px_0px_#2B3D2E] rounded-lg">
+            <table className="w-full text-left border-collapse text-xs sm:text-sm">
+              <thead>
+                <tr className="bg-[#2B3D2E] text-[#F4EEDD] border-b-2 border-[#DCAE42]">
+                  <th className="p-3 sm:p-4 font-heading font-bold uppercase tracking-wider">Hạng phòng</th>
+                  <th className="p-3 sm:p-4 font-heading font-bold uppercase tracking-wider">Diện tích & Sức chứa</th>
+                  <th className="p-3 sm:p-4 font-heading font-bold uppercase tracking-wider">Ngày Thường (CN – Th5)</th>
+                  <th className="p-3 sm:p-4 font-heading font-bold uppercase tracking-wider">Cuối Tuần (Th6 – Th7 & Lễ)</th>
+                  <th className="p-3 sm:p-4 font-heading font-bold uppercase tracking-wider">Đặc quyền khi đặt qua Web</th>
+                </tr>
+              </thead>
+              <tbody className="divide-y divide-[#2B3D2E]/20 font-body">
+                {/* Row 1 */}
+                <tr className="hover:bg-[#F4EEDD]/60 transition-colors">
+                  <td className="p-3 sm:p-4 font-bold text-[#2B3D2E]">
+                    <div className="font-heading text-base">1. Phòng Cửa Ô</div>
+                    <span className="text-xs font-typewriter text-[#2B3D2E]/70">(Standard Heritage)</span>
+                  </td>
+                  <td className="p-3 sm:p-4 text-[#2B3D2E]">
+                    <div>• 20m²</div>
+                    <div>• Tối đa 2 người lớn (1 giường đôi)</div>
+                  </td>
+                  <td className="p-3 sm:p-4 font-mono font-bold text-base text-[#2B3D2E]">
+                    750.000 VNĐ <span className="text-xs font-normal">/ đêm</span>
+                  </td>
+                  <td className="p-3 sm:p-4 font-mono font-black text-base text-[#A8322D]">
+                    950.000 VNĐ <span className="text-xs font-normal">/ đêm</span>
+                  </td>
+                  <td className="p-3 sm:p-4 text-[#2B3D2E] text-xs">
+                    <ul className="space-y-1 list-disc list-inside">
+                      <li>Miễn phí set trà sen chào đón & bánh đậu xanh mậu dịch.</li>
+                      <li>Tặng voucher giảm 10% đồ uống tại toàn hệ thống Cộng Cà Phê.</li>
+                    </ul>
+                  </td>
+                </tr>
+
+                {/* Row 2 */}
+                <tr className="bg-[#DCAE42]/10 hover:bg-[#DCAE42]/20 transition-colors">
+                  <td className="p-3 sm:p-4 font-bold text-[#2B3D2E]">
+                    <div className="font-heading text-base">2. Phòng Mậu Dịch</div>
+                    <span className="text-xs font-typewriter text-[#A8322D] font-bold">(Deluxe Retro Suite) ★</span>
+                  </td>
+                  <td className="p-3 sm:p-4 text-[#2B3D2E]">
+                    <div>• 30m²</div>
+                    <div>• 2 – 3 người lớn (Giường 4 cọc King-size)</div>
+                  </td>
+                  <td className="p-3 sm:p-4 font-mono font-bold text-base text-[#2B3D2E]">
+                    1.300.000 VNĐ <span className="text-xs font-normal">/ đêm</span>
+                  </td>
+                  <td className="p-3 sm:p-4 font-mono font-black text-base text-[#A8322D]">
+                    1.600.000 VNĐ <span className="text-xs font-normal">/ đêm</span>
+                  </td>
+                  <td className="p-3 sm:p-4 text-[#2B3D2E] text-xs">
+                    <ul className="space-y-1 list-disc list-inside">
+                      <li>Miễn phí 02 ly Cà phê Cốt dừa phục vụ mỗi sáng.</li>
+                      <li>Tặng set trà thảo mộc & trải nghiệm pha phin thủ công tại phòng.</li>
+                    </ul>
+                  </td>
+                </tr>
+
+                {/* Row 3 */}
+                <tr className="hover:bg-[#F4EEDD]/60 transition-colors">
+                  <td className="p-3 sm:p-4 font-bold text-[#2B3D2E]">
+                    <div className="font-heading text-base">3. Phòng Trạm Dừng</div>
+                    <span className="text-xs font-typewriter text-[#2B3D2E]/70">(Family Loft)</span>
+                  </td>
+                  <td className="p-3 sm:p-4 text-[#2B3D2E]">
+                    <div>• 45m² (Duplex gác lửng)</div>
+                    <div>• 4 – 5 khách (Gia đình / nhóm bạn)</div>
+                  </td>
+                  <td className="p-3 sm:p-4 font-mono font-bold text-base text-[#2B3D2E]">
+                    1.750.000 VNĐ <span className="text-xs font-normal">/ đêm</span>
+                  </td>
+                  <td className="p-3 sm:p-4 font-mono font-black text-base text-[#A8322D]">
+                    2.150.000 VNĐ <span className="text-xs font-normal">/ đêm</span>
+                  </td>
+                  <td className="p-3 sm:p-4 text-[#2B3D2E] text-xs">
+                    <ul className="space-y-1 list-disc list-inside">
+                      <li>Tặng voucher "Tem Phiếu Mậu Dịch" giảm 15% đồ uống tại Cộng Cà Phê.</li>
+                      <li>Miễn phí bộ trò chơi dân gian (Ô ăn quan, cờ vua...) tại phòng.</li>
+                    </ul>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        {/* 2 Chính Sách Đặt Phòng Nổi Bật */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="p-5 sm:p-6 bg-[#FBF9F2] border-2 border-[#2B3D2E] shadow-[4px_4px_0px_#2B3D2E] rounded-lg flex items-start gap-4">
+            <div className="w-12 h-12 rounded bg-[#A8322D] text-[#F4EEDD] flex items-center justify-center shrink-0 border border-[#2B3D2E]">
+              <RefreshCw className="w-6 h-6" />
+            </div>
+            <div>
+              <h4 className="font-heading font-bold text-base text-[#2B3D2E] uppercase mb-1.5">
+                Miễn phí đổi/hủy lịch linh hoạt
+              </h4>
+              <p className="font-body text-xs sm:text-sm text-[#3A4A3C] leading-relaxed">
+                Hỗ trợ linh hoạt dời ngày lưu trú hoàn toàn miễn phí trước 48 giờ check-in (áp dụng cho các đơn đặt ngày thường).
+              </p>
+            </div>
+          </div>
+
+          <div className="p-5 sm:p-6 bg-[#FBF9F2] border-2 border-[#2B3D2E] shadow-[4px_4px_0px_#2B3D2E] rounded-lg flex items-start gap-4">
+            <div className="w-12 h-12 rounded bg-[#2B3D2E] text-[#DCAE42] flex items-center justify-center shrink-0 border border-[#DCAE42]">
+              <Clock className="w-6 h-6" />
+            </div>
+            <div>
+              <h4 className="font-heading font-bold text-base text-[#2B3D2E] uppercase mb-1.5">
+                Early Check-in / Late Check-out
+              </h4>
+              <p className="font-body text-xs sm:text-sm text-[#3A4A3C] leading-relaxed">
+                Ưu tiên nhận phòng sớm hoặc trả phòng muộn 1 tiếng (tùy thuộc vào tình trạng phòng trống thực tế tại trạm dừng).
+              </p>
+            </div>
           </div>
         </div>
       </div>
