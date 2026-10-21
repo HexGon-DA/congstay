@@ -93,8 +93,8 @@ export default function Hero({ onBookClick, onRoomsClick, onSelectLocation }) {
                 {/* Main image: Retro bedroom, wooden window looking out to Hanoi Old Quarter, tray with coconut coffee */}
                 <div className="relative overflow-hidden rounded border-2 border-[#2B3D2E] aspect-[4/3] sm:aspect-[16/11]">
                   <img
-                    src="./images/hero/hero-cong-stay.jpg"
-                    alt="Cửa sổ gỗ cổ kính nhìn ra phố cổ Hà Nội và cà phê cốt dừa"
+                    src="./images/hero/hero-cong-stay-v2.jpg"
+                    alt="Phòng Mậu Dịch di sản ban công ngắm mái ngói âm dương rêu phong và cà phê cốt dừa"
                     className="w-full h-full object-cover filter contrast-[1.05] brightness-95"
                     loading="eager"
                   />

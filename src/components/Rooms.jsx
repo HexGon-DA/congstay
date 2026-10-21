@@ -8,7 +8,7 @@ export const ROOMS_DATA = [
     subname: 'Standard Heritage Room',
     headline: 'Nét duyên mộc mạc giữa lòng phố cổ',
     badge: 'MỘC MẠC & ẤM CÚNG',
-    image: './images/rooms/phong-cua-o.jpg',
+    image: './images/rooms/phong-cua-o-v2.jpg',
     imageAlt: 'Phòng Cửa Ô 20m² ngõ phố cổ cửa chớp gỗ đèn vàng ấm áp phong cách Cộng hoài niệm',
     specs: {
       area: '20m²',
@@ -39,7 +39,7 @@ export const ROOMS_DATA = [
     subname: 'Deluxe Retro Suite',
     headline: 'Không gian di sản sang trọng & Hương vị cà phê sớm mai',
     badge: 'LỰA CHỌN PHỔ BIẾN NHẤT',
-    image: './images/rooms/phong-mau-dich.jpg',
+    image: './images/rooms/phong-mau-dich-v2.jpg',
     imageAlt: 'Phòng Mậu Dịch 30m² ban công mái ngói âm dương rêu phong máy hát đĩa than cà phê cốt dừa',
     specs: {
       area: '30m²',
@@ -71,7 +71,7 @@ export const ROOMS_DATA = [
     subname: 'Family Loft',
     headline: 'Tổ ấm gác lửng cho gia đình & những cuộc hội ngộ thân tình',
     badge: 'GIA ĐÌNH & NHÓM BẠN',
-    image: './images/rooms/phong-tram-dung.jpg',
+    image: './images/rooms/phong-tram-dung-v2.jpg',
     imageAlt: 'Phòng Trạm Dừng 45m² duplex gác lửng sofa cổ điển tủ sách trò chơi dân gian ô ăn quan',
     specs: {
       area: '45m² (Thiết kế Duplex có gác lửng)',
