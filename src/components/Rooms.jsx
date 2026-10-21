@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Bed, Users, Maximize2, Coffee, Check, Star, ShieldCheck, Sparkles, Clock, Calendar, Gift, Eye, RefreshCw, Shield } from 'lucide-react';
+import { Users, Check, Star, Clock, Gift, Eye, RefreshCw } from 'lucide-react';
 
 export const ROOMS_DATA = [
   {
@@ -9,7 +9,7 @@ export const ROOMS_DATA = [
     headline: 'Nét duyên mộc mạc giữa lòng phố cổ',
     badge: 'MỘC MẠC & ẤM CÚNG',
     image: './images/rooms/phong-cua-o.jpg',
-    imageAlt: 'Phòng Cửa Ô 1 giường đôi đèn vàng ấm bàn ghế gỗ nan thời xưa Việt Nam',
+    imageAlt: 'Phòng Cửa Ô 20m² ngõ phố cổ cửa chớp gỗ đèn vàng ấm áp phong cách Cộng hoài niệm',
     specs: {
       area: '20m²',
       guests: 'Tối đa 2 người lớn (1 giường đôi)',
@@ -40,7 +40,7 @@ export const ROOMS_DATA = [
     headline: 'Không gian di sản sang trọng & Hương vị cà phê sớm mai',
     badge: 'LỰA CHỌN PHỔ BIẾN NHẤT',
     image: './images/rooms/phong-mau-dich.jpg',
-    imageAlt: 'Phòng Mậu Dịch giường 4 cọc King-size ban công ngói âm dương cà phê phin cốt dừa',
+    imageAlt: 'Phòng Mậu Dịch 30m² ban công mái ngói âm dương rêu phong máy hát đĩa than cà phê cốt dừa',
     specs: {
       area: '30m²',
       guests: 'Tối đa 2 – 3 người lớn (1 giường 4 cọc King-size)',
@@ -72,10 +72,10 @@ export const ROOMS_DATA = [
     headline: 'Tổ ấm gác lửng cho gia đình & những cuộc hội ngộ thân tình',
     badge: 'GIA ĐÌNH & NHÓM BẠN',
     image: './images/rooms/phong-tram-dung.jpg',
-    imageAlt: 'Phòng Trạm Dừng gia đình gác lửng duplex tủ sách trò chơi dân gian ô ăn quan',
+    imageAlt: 'Phòng Trạm Dừng 45m² duplex gác lửng sofa cổ điển tủ sách trò chơi dân gian ô ăn quan',
     specs: {
       area: '45m² (Thiết kế Duplex có gác lửng)',
-      guests: '4 – 5 khách (Gia đình hoặc nhóm bạn thân)',
+      guests: '4 – 5 khách (Lý tưởng cho gia đình hoặc nhóm bạn thân)',
       view: 'Cửa vòm kính lớn ôm trọn mảng xanh và phố phường nhộn nhịp'
     },
     amenities: [
@@ -289,105 +289,6 @@ export default function Rooms({ onSelectRoom }) {
               </div>
             );
           })}
-        </div>
-
-        {/* Bảng Niêm Yết Giá & Đặc Quyền Chi Tiết (Comparison Table) */}
-        <div className="mb-14">
-          <div className="text-center mb-6">
-            <span className="font-typewriter text-xs uppercase font-bold text-[#A8322D] tracking-widest block mb-1">
-              BẢNG TỔNG HỢP CHI TIẾT
-            </span>
-            <h3 className="font-heading font-bold text-2xl text-[#2B3D2E] uppercase">
-              Bảng So Sánh Giá & Đặc Quyền Đặt Trực Tiếp
-            </h3>
-          </div>
-
-          <div className="overflow-x-auto bg-[#FBF9F2] border-2 border-[#2B3D2E] shadow-[5px_5px_0px_#2B3D2E] rounded-lg">
-            <table className="w-full text-left border-collapse text-xs sm:text-sm">
-              <thead>
-                <tr className="bg-[#2B3D2E] text-[#F4EEDD] border-b-2 border-[#DCAE42]">
-                  <th className="p-3 sm:p-4 font-heading font-bold uppercase tracking-wider">Hạng phòng</th>
-                  <th className="p-3 sm:p-4 font-heading font-bold uppercase tracking-wider">Diện tích & Sức chứa</th>
-                  <th className="p-3 sm:p-4 font-heading font-bold uppercase tracking-wider">Ngày Thường (CN – Th5)</th>
-                  <th className="p-3 sm:p-4 font-heading font-bold uppercase tracking-wider">Cuối Tuần (Th6 – Th7 & Lễ)</th>
-                  <th className="p-3 sm:p-4 font-heading font-bold uppercase tracking-wider">Đặc quyền khi đặt qua Web</th>
-                </tr>
-              </thead>
-              <tbody className="divide-y divide-[#2B3D2E]/20 font-body">
-                {/* Row 1 */}
-                <tr className="hover:bg-[#F4EEDD]/60 transition-colors">
-                  <td className="p-3 sm:p-4 font-bold text-[#2B3D2E]">
-                    <div className="font-heading text-base">1. Phòng Cửa Ô</div>
-                    <span className="text-xs font-typewriter text-[#2B3D2E]/70">(Standard Heritage)</span>
-                  </td>
-                  <td className="p-3 sm:p-4 text-[#2B3D2E]">
-                    <div>• 20m²</div>
-                    <div>• Tối đa 2 người lớn (1 giường đôi)</div>
-                  </td>
-                  <td className="p-3 sm:p-4 font-mono font-bold text-base text-[#2B3D2E]">
-                    750.000 VNĐ <span className="text-xs font-normal">/ đêm</span>
-                  </td>
-                  <td className="p-3 sm:p-4 font-mono font-black text-base text-[#A8322D]">
-                    950.000 VNĐ <span className="text-xs font-normal">/ đêm</span>
-                  </td>
-                  <td className="p-3 sm:p-4 text-[#2B3D2E] text-xs">
-                    <ul className="space-y-1 list-disc list-inside">
-                      <li>Miễn phí set trà sen chào đón & bánh đậu xanh mậu dịch.</li>
-                      <li>Tặng voucher giảm 10% đồ uống tại toàn hệ thống Cộng Cà Phê.</li>
-                    </ul>
-                  </td>
-                </tr>
-
-                {/* Row 2 */}
-                <tr className="bg-[#DCAE42]/10 hover:bg-[#DCAE42]/20 transition-colors">
-                  <td className="p-3 sm:p-4 font-bold text-[#2B3D2E]">
-                    <div className="font-heading text-base">2. Phòng Mậu Dịch</div>
-                    <span className="text-xs font-typewriter text-[#A8322D] font-bold">(Deluxe Retro Suite) ★</span>
-                  </td>
-                  <td className="p-3 sm:p-4 text-[#2B3D2E]">
-                    <div>• 30m²</div>
-                    <div>• 2 – 3 người lớn (Giường 4 cọc King-size)</div>
-                  </td>
-                  <td className="p-3 sm:p-4 font-mono font-bold text-base text-[#2B3D2E]">
-                    1.300.000 VNĐ <span className="text-xs font-normal">/ đêm</span>
-                  </td>
-                  <td className="p-3 sm:p-4 font-mono font-black text-base text-[#A8322D]">
-                    1.600.000 VNĐ <span className="text-xs font-normal">/ đêm</span>
-                  </td>
-                  <td className="p-3 sm:p-4 text-[#2B3D2E] text-xs">
-                    <ul className="space-y-1 list-disc list-inside">
-                      <li>Miễn phí 02 ly Cà phê Cốt dừa phục vụ mỗi sáng.</li>
-                      <li>Tặng set trà thảo mộc & trải nghiệm pha phin thủ công tại phòng.</li>
-                    </ul>
-                  </td>
-                </tr>
-
-                {/* Row 3 */}
-                <tr className="hover:bg-[#F4EEDD]/60 transition-colors">
-                  <td className="p-3 sm:p-4 font-bold text-[#2B3D2E]">
-                    <div className="font-heading text-base">3. Phòng Trạm Dừng</div>
-                    <span className="text-xs font-typewriter text-[#2B3D2E]/70">(Family Loft)</span>
-                  </td>
-                  <td className="p-3 sm:p-4 text-[#2B3D2E]">
-                    <div>• 45m² (Duplex gác lửng)</div>
-                    <div>• 4 – 5 khách (Gia đình / nhóm bạn)</div>
-                  </td>
-                  <td className="p-3 sm:p-4 font-mono font-bold text-base text-[#2B3D2E]">
-                    1.750.000 VNĐ <span className="text-xs font-normal">/ đêm</span>
-                  </td>
-                  <td className="p-3 sm:p-4 font-mono font-black text-base text-[#A8322D]">
-                    2.150.000 VNĐ <span className="text-xs font-normal">/ đêm</span>
-                  </td>
-                  <td className="p-3 sm:p-4 text-[#2B3D2E] text-xs">
-                    <ul className="space-y-1 list-disc list-inside">
-                      <li>Tặng voucher "Tem Phiếu Mậu Dịch" giảm 15% đồ uống tại Cộng Cà Phê.</li>
-                      <li>Miễn phí bộ trò chơi dân gian (Ô ăn quan, cờ vua...) tại phòng.</li>
-                    </ul>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
         </div>
 
         {/* 2 Chính Sách Đặt Phòng Nổi Bật */}
